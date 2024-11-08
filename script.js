@@ -22,7 +22,7 @@ const reviews = [
     }
 ];
 
-// Select elements
+
 const img = document.getElementById("person-img");
 const author = document.getElementById("author");
 const job = document.getElementById("job");
@@ -32,15 +32,12 @@ const prevBtn = document.querySelector('.prv-btn');
 const nextBtn = document.querySelector('.next-btn');
 const randomBtn = document.querySelector('.random-btn');
 
-// Set starting item
 let currentItem = 0; 
 
-// Load initial item
 window.addEventListener("DOMContentLoaded", function() {
     showPerson(currentItem);
 });
 
-// Show person based on the current item
 function showPerson(personIndex) {
     const item = reviews[personIndex];
     img.src = item.img;
@@ -49,7 +46,6 @@ function showPerson(personIndex) {
     info.textContent = item.text;
 }
 
-// Show next person
 nextBtn.addEventListener('click', function() {
     currentItem++;
     if (currentItem > reviews.length - 1) {
@@ -58,7 +54,6 @@ nextBtn.addEventListener('click', function() {
     showPerson(currentItem);
 });
 
-// Show previous person
 prevBtn.addEventListener('click', function() {
     currentItem--;
     if (currentItem < 0) {
@@ -67,8 +62,37 @@ prevBtn.addEventListener('click', function() {
     showPerson(currentItem);
 });
 
-// Show random person
 randomBtn.addEventListener('click', function() {
     currentItem = Math.floor(Math.random() * reviews.length);
     showPerson(currentItem);
+});
+
+const sidebar = document.getElementById("sidebar");
+const openSidebarBtn = document.getElementById("openSidebarBtn");
+
+openSidebarBtn.addEventListener("click", () => {
+    sideBar.style.width = "200px"; // 
+});
+
+
+reviews.forEach((review, index) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = review.name;
+    listItem.addEventListener("click", () => {
+        currentItem = index;
+    });
+    reviewList.appendChild(listItem);
+});
+
+let autoScroll = null;
+autoScrollBtn.addEventListener("click", () => {
+    if (autoScroll) {
+        clearInterval(autoScroll);
+        autoScroll = null;
+    } else {
+        autoScroll = setInterval(() => {
+            
+            nextReview(); 
+        }, 3000);
+    }
 });

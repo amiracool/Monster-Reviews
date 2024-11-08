@@ -1,11 +1,10 @@
-/* General reset */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and main layout */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -16,7 +15,7 @@ body {
     height: 100vh;
 }
 
-/* Main container styling */
+
 main {
     width: 100%;
     max-width: 900px;
@@ -26,12 +25,11 @@ main {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Container for reviews */
 .container {
     text-align: center;
 }
 
-/* Heading and underline */
+
 h2 {
     font-size: 2rem;
     margin-bottom: 10px;
@@ -82,7 +80,6 @@ h4#author {
     line-height: 1.5;
 }
 
-/* Button container and button styling */
 .button-container {
     display: flex;
     justify-content: center;
@@ -121,3 +118,35 @@ h4#author {
     background-color: #444;
     transform: scale(1.05);
 }
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333; 
+    color: white;
+    overflow-x: hidden;
+}
+
+.sidebar h2 {
+    padding-left: 5px;
+ 
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.close-btn, .open-sidebar-btn {
+    font-size: 20px;
+    background-color: lightgrey;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+.main-content {
+    padding: 20px;
+}
+

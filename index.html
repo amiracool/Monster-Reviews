@@ -4,12 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- Add Font Awesome for icons -->
      <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Sidebar-->
+<div id="sidebar" class="sidebar">
+    <button id="closeBtn" class="close-btn">X</button>
+    <h2>Reviews</h2>
+    <ul id="reviewList">
+    
+    </ul>
+    <button id="autoScrollBtn">Auto-Scroll</button>
+</div>
+<!--main-->
+<div class="main-content">
+    <button id="openSidebarBtn" class="open-sidebar-btn">Open Sidebar</button>
+    <!--rviewcontent -->
+    <div id="reviewContent">
+        <p id="author">Author</p>
+        <p id="job">Job Title</p>
+        <p id="info">Review Text</p>
+    </div>
+</div>
+
     <main>
         <section class="container">
             <h2>Our Reviews</h2>
@@ -23,8 +42,6 @@
                 <p id="job">UX designer</p>
                 <p id="info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique dignissimos maiores molestiae iste. Eveniet magni vitae ut minus quos voluptatem ipsam ex, itaque, est assumenda quia! Totam atque ipsa iste?</p>
             </article>
-
-            <!-- Button container -->
             <div class="button-container">
                 <button class="prv-btn">
                     <i class="fas fa-chevron-left"></i>
@@ -34,7 +51,6 @@
                 </button>
             </div>
 
-            <!-- Random button -->
             <button class="random-btn">Surprise me</button>
         </section>
     </main>
